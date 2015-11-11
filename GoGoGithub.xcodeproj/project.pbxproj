@@ -56,9 +56,9 @@
 		E1F9F6151BF1484300001261 /* GoGoGithub */ = {
 			isa = PBXGroup;
 			children = (
+				E1F9F6281BF14E0F00001261 /* OAuthClient.swift */,
 				E1F9F6161BF1484300001261 /* AppDelegate.swift */,
 				E1F9F6181BF1484300001261 /* ViewController.swift */,
-				E1F9F6281BF14E0F00001261 /* OAuthClient.swift */,
 				E1F9F61A1BF1484300001261 /* Main.storyboard */,
 				E1F9F61D1BF1484300001261 /* Assets.xcassets */,
 				E1F9F61F1BF1484300001261 /* LaunchScreen.storyboard */,
@@ -290,6 +290,7 @@
 				E1F9F6271BF1484300001261 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

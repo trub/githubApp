@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,10 +22,14 @@ class ViewController: UIViewController {
     }
     
 
-    @IBAction func authenticButtonPressed(sender: UIButton) {
+    @IBAction func authenticButtonPressed(sender: AnyObject) {
         print("make call to github")
         OAuthClient.shared.requestOAuthFromGithub("user")
     }
 
+    @IBAction func printTokenButton(sender: AnyObject) {
+        print(OAuthClient.shared.token())
+        
+    }
 }
 
