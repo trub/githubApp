@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E1DE1EB91BF2C0900001B622 /* GithubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DE1EB81BF2C0900001B622 /* GithubService.swift */; };
+		E1DE1F1E1BF3E42A0001B622 /* KeyChainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DE1F1D1BF3E42A0001B622 /* KeyChainService.swift */; };
+		E1DE1F231BF406310001B622 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DE1F221BF406310001B622 /* Constants.swift */; };
+		E1DE1F251BF411630001B622 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DE1F241BF411630001B622 /* Repository.swift */; };
+		E1DE1F271BF417820001B622 /* RepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DE1F261BF417820001B622 /* RepositoryViewController.swift */; };
 		E1F9F6171BF1484300001261 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F9F6161BF1484300001261 /* AppDelegate.swift */; };
 		E1F9F6191BF1484300001261 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F9F6181BF1484300001261 /* ViewController.swift */; };
 		E1F9F61C1BF1484300001261 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1F9F61A1BF1484300001261 /* Main.storyboard */; };
@@ -16,6 +21,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E1DE1EB81BF2C0900001B622 /* GithubService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubService.swift; sourceTree = "<group>"; };
+		E1DE1F1D1BF3E42A0001B622 /* KeyChainService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyChainService.swift; path = "../../sea-d47-ios/week-3/nov-10-github/lecture-code/KeychainDemo/KeychainDemo/KeyChainService.swift"; sourceTree = "<group>"; };
+		E1DE1F221BF406310001B622 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E1DE1F241BF411630001B622 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		E1DE1F261BF417820001B622 /* RepositoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryViewController.swift; sourceTree = "<group>"; };
 		E1F9F6131BF1484300001261 /* GoGoGithub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoGoGithub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1F9F6161BF1484300001261 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1F9F6181BF1484300001261 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -37,6 +47,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E1DE1EBC1BF3AB420001B622 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E1F9F6281BF14E0F00001261 /* OAuthClient.swift */,
+				E1DE1EB81BF2C0900001B622 /* GithubService.swift */,
+				E1DE1F1D1BF3E42A0001B622 /* KeyChainService.swift */,
+				E1DE1F241BF411630001B622 /* Repository.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		E1DE1F211BF3ECF60001B622 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E1F9F6181BF1484300001261 /* ViewController.swift */,
+				E1DE1F261BF417820001B622 /* RepositoryViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		E1F9F60A1BF1484300001261 = {
 			isa = PBXGroup;
 			children = (
@@ -56,9 +86,10 @@
 		E1F9F6151BF1484300001261 /* GoGoGithub */ = {
 			isa = PBXGroup;
 			children = (
-				E1F9F6281BF14E0F00001261 /* OAuthClient.swift */,
 				E1F9F6161BF1484300001261 /* AppDelegate.swift */,
-				E1F9F6181BF1484300001261 /* ViewController.swift */,
+				E1DE1F221BF406310001B622 /* Constants.swift */,
+				E1DE1F211BF3ECF60001B622 /* Controller */,
+				E1DE1EBC1BF3AB420001B622 /* Model */,
 				E1F9F61A1BF1484300001261 /* Main.storyboard */,
 				E1F9F61D1BF1484300001261 /* Assets.xcassets */,
 				E1F9F61F1BF1484300001261 /* LaunchScreen.storyboard */,
@@ -138,8 +169,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1DE1F271BF417820001B622 /* RepositoryViewController.swift in Sources */,
 				E1F9F6291BF14E0F00001261 /* OAuthClient.swift in Sources */,
 				E1F9F6191BF1484300001261 /* ViewController.swift in Sources */,
+				E1DE1F1E1BF3E42A0001B622 /* KeyChainService.swift in Sources */,
+				E1DE1F251BF411630001B622 /* Repository.swift in Sources */,
+				E1DE1EB91BF2C0900001B622 /* GithubService.swift in Sources */,
+				E1DE1F231BF406310001B622 /* Constants.swift in Sources */,
 				E1F9F6171BF1484300001261 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
