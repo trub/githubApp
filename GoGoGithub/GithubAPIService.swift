@@ -14,46 +14,61 @@ class GithubAPIService {
     
 
     //MARK: GET Request functions
-    class func fetchRepositories(completion: (success: Bool, json: [[String:AnyObject]]?) -> ()) {
-        do {
-            guard let token = OAuthClient.shared.token() else {
-                return completion(success: false, json: nil)
-            }
-            print("found...\(token)")
-            
-            guard let url = NSURL(string: "https://api.github.com/user/repos?access_token=\(token)") else {
-                return completion(success: false, json: nil)
-            }
-            
-            let request = NSMutableURLRequest(URL: url)
-            request.setValue("application/json", forHTTPHeaderField: "Accept")
-            NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
-                if let error = error {
-                    print(error)
-                    return completion(success: false, json: nil)
-                }
-                if let data = data {
-                    do {
-                        let json = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers)
-                        print(json)
-                        guard let result = json as? [[String:AnyObject]] else {
-                            return completion(success: false, json: nil)
-                        }
-                        return completion(success: true, json: result )
-                        
-                    } catch _ {
-                        return completion(success: false, json: nil)
-                    }
-                } else {
-                    return completion(success: false, json: nil)
-
+    
+    class func fetchRepositories(completion: (success: Bool, repositories: [Repository]?) -> ()) {
+        if let token = OAuthClient.shared.token() {
+            if let url = NSURL(string: "https://api.github.com/user/repos?access_token=\(token)") {
+                
+                let request = NSMutableURLRequest(URL: url)
+                request.setValue("application/json", forHTTPHeaderField: "Accept")
+                
+                NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
                     
-                }
-            }).resume()
+                    if let error = error {
+                        print(error)
+                    }
+                    
+                    if let data = data {
+                        do {
+                            
+                            if let json = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers) as? [[String : AnyObject]] {
+                                
+                                var repositories = [Repository]()
+                                
+                                for repo in json {
+                                    
+                                    
+                                    if let repo = self.repositoriesFromJSON(repo) {
+                                        repositories.append(repo)
+                                    }
+                                    
+                                    
+                                }
+                                
+                                completion(success: true, repositories: repositories)
+                                
+                                
+                            }
+                            
+                            
+                        } catch let error {
+                            print(error)
+                        }
+                    }
+                    
+                }).resume()
+            }
         }
-        
     }
     
+    
+    private class func repositoriesFromJSON(json: [String:AnyObject]) -> Repository? {
+        if let repoName = json["name"] as? String, repoSummary = json["description"] as? String, repoOwner = json["owner"] as? [String: AnyObject] {
+            return Repository(repoName: repoName, repoSummary: repoSummary, repoOwner: repoOwner)
+        }
+        
+        return nil
+    }
     
     class func searchWithTerm(term: String, completion: (success: Bool, json: [AnyObject]) -> ()) {
         

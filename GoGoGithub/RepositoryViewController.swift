@@ -32,6 +32,8 @@ class RepositoryViewController: UIViewController, UITableViewDataSource, UITable
     
     //MARK: setup functions
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(repositories.count)
+
         return repositories.count
     }
     
@@ -46,27 +48,20 @@ class RepositoryViewController: UIViewController, UITableViewDataSource, UITable
 
     
     func setUpView() {
-        self.view.backgroundColor = UIColor.redColor()
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.backgroundColor = UIColor.redColor()
     }
     
     func loadRepositories () {
-        GithubAPIService.fetchRepositories { (success, data) -> () in
-            print("success:\(success)")
-            print("data:\(data)")
-            guard let searchResults = data else {
-                print("searchResults dint wrok")
-                return }
-//            guard let parsedResults = GithubJSONParser.parseRepositories(searchResults) else {
-//                print("parseResult dint wrok")
-//                return }
-//            NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-//                self.repositories = parsedResults
-//            })
+        
+        GithubAPIService.fetchRepositories { (success, repositories) -> () in
+            //
         }
+     
     }
    
+    @IBAction func postRepository(sender: AnyObject) {
+    }
     
 }
