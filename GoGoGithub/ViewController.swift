@@ -15,11 +15,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let myToken = KeychainService.loadFromKeychain()
-        print(myToken)
+//        let myToken = KeychainService.loadFromKeychain()
         
         //Get respositiories from github
-        GithubService.GETRepositories { (success, json) -> () in
+        GithubAPIService.fetchRepositories { (success, json) -> () in
             print(json)
         }
     }
@@ -34,8 +33,6 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-    
     
 
     @IBAction func authenticButtonPressed(sender: AnyObject) {
