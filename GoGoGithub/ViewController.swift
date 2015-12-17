@@ -7,24 +7,42 @@
 //
 
 import UIKit
+import Security
 
 class ViewController: UIViewController {
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+//        let myToken = KeychainService.loadFromKeychain()
+        
+        //Get respositiories from github
+        GithubAPIService.fetchRepositories { (success, json) -> () in
+            print(json)
+        }
+    }
+    
+    @IBOutlet weak var loginButton: UIButton!
+    
+    func setupAppearance() {
+        self.loginButton.layer.cornerRadius = 5.0
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 
-    @IBAction func authenticButtonPressed(sender: UIButton) {
-        print("make call to github")
-        OAuthClient.shared.requestOAuthFromGithub("user")
+    @IBAction func authenticButtonPressed(sender: AnyObject) {
+        OAuthClient.shared.requestOAuthFromGithub("user,repo")
     }
 
+    @IBAction func printTokenButton(sender: AnyObject) {
+        print(OAuthClient.shared.token())
+        
+        
+    }
 }
 

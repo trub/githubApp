@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "373C197FE9982199E587B78FEB324A75EE6261D8",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "373C197FE9982199E587B78FEB324A75EE6261D8" : 0,
+    "660CFF352752B233445C9E5A67F8C3D8352A1D15" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "32767596-FFFD-4205-AA1F-43AC4547320E",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "373C197FE9982199E587B78FEB324A75EE6261D8" : "githubApp\/",
+    "660CFF352752B233445C9E5A67F8C3D8352A1D15" : "sea-d47-ios\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "GoGoGithub",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "GoGoGithub.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/trub\/githubApp",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "373C197FE9982199E587B78FEB324A75EE6261D8"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/codefellows\/sea-d47-ios",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "660CFF352752B233445C9E5A67F8C3D8352A1D15"
+    }
+  ]
+}

@@ -1,42 +1,159 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="VxH-Q1-oJW">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GoGoGithub" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="GoGoGithub" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleAspectFit" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j6D-hR-0bO">
-                                <rect key="frame" x="240" y="285" width="120" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Login with Github"/>
-                                <connections>
-                                    <action selector="authenticButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JQz-Zw-0eF"/>
-                                </connections>
-                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="githubLogo" translatesAutoresizingMaskIntoConstraints="NO" id="J1s-Pg-Yo9">
+                                <rect key="frame" x="189" y="123" width="200" height="270"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="4GR-6a-OeP"/>
+                                    <constraint firstAttribute="height" constant="200" id="fbB-I5-XQh"/>
+                                    <constraint firstAttribute="height" constant="188" id="ksh-kT-aWv"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="fbB-I5-XQh"/>
+                                        <exclude reference="ksh-kT-aWv"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zf0-wd-VhL">
+                                <rect key="frame" x="169" y="419" width="240" height="302"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j6D-hR-0bO">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="40"/>
+                                        <color key="backgroundColor" red="0.2488422860627304" green="0.66327806879141504" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Ioh-vU-Zlp"/>
+                                            <constraint firstAttribute="width" constant="240" id="naV-2J-NLU"/>
+                                        </constraints>
+                                        <state key="normal" title="Login with Github">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="authenticButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JQz-Zw-0eF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kcn-DQ-Lxx">
+                                        <rect key="frame" x="0.0" y="71" width="240" height="40"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="1pl-qM-b12"/>
+                                            <constraint firstAttribute="width" constant="240" id="dR7-kG-sWS"/>
+                                        </constraints>
+                                        <state key="normal" title="Print Token">
+                                            <color key="titleColor" red="0.20392156862745098" green="0.58823529411764708" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="printTokenButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d6x-RZ-Ipy"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="j6D-hR-0bO" firstAttribute="centerY" secondItem="zf0-wd-VhL" secondAttribute="centerY" constant="-131" id="E2h-cT-9ah"/>
+                                    <constraint firstItem="Kcn-DQ-Lxx" firstAttribute="centerX" secondItem="zf0-wd-VhL" secondAttribute="centerX" id="JsQ-3k-IwG"/>
+                                    <constraint firstItem="j6D-hR-0bO" firstAttribute="centerX" secondItem="zf0-wd-VhL" secondAttribute="centerX" id="NJY-5g-E8a"/>
+                                    <constraint firstAttribute="width" constant="240" id="dlF-ew-wZb"/>
+                                    <constraint firstItem="Kcn-DQ-Lxx" firstAttribute="centerY" secondItem="zf0-wd-VhL" secondAttribute="centerY" constant="-60" id="lUf-bP-jdk"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="j6D-hR-0bO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Yn9-Oe-NCP"/>
-                            <constraint firstItem="j6D-hR-0bO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hKj-sj-aA7"/>
+                            <constraint firstItem="zf0-wd-VhL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="270" id="4yN-6g-avq"/>
+                            <constraint firstItem="J1s-Pg-Yo9" firstAttribute="centerX" secondItem="zf0-wd-VhL" secondAttribute="centerX" id="KVS-Ft-oIm"/>
+                            <constraint firstItem="J1s-Pg-Yo9" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="103" id="Lr5-ed-vVZ"/>
+                            <constraint firstItem="zf0-wd-VhL" firstAttribute="top" secondItem="J1s-Pg-Yo9" secondAttribute="bottom" constant="26" id="SpB-AP-LzW"/>
+                            <constraint firstItem="zf0-wd-VhL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-11" id="Y9n-Ul-bPU"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginButton" destination="j6D-hR-0bO" id="pqh-Tf-Kbs"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="280" y="337"/>
+            <point key="canvasLocation" x="308" y="263"/>
+        </scene>
+        <!--Repositories-->
+        <scene sceneID="2wP-Iz-FWM">
+            <objects>
+                <viewController id="H4m-Gn-YjL" customClass="RepositoryViewController" customModule="GoGoGithub" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XAY-C5-XQk"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ryq-BW-CXf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tEs-Dj-R4s">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Tak-uJ-rGz">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="customCell" id="huM-ke-Q6o">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="huM-ke-Q6o" id="LBb-c3-W3e">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Repositories" id="h1I-n7-NpC">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="6f7-B5-u4i">
+                            <connections>
+                                <action selector="postRepository:" destination="H4m-Gn-YjL" id="6Eu-tp-0vj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Tak-uJ-rGz" id="1r5-Ot-drt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oe8-cT-mx4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1790" y="263"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7wq-CV-4Ej">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VxH-Q1-oJW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="G1l-PZ-TZy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="H4m-Gn-YjL" kind="relationship" relationship="rootViewController" id="aSj-b1-X9Z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8WR-5q-15b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="978" y="263"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="githubLogo" width="270" height="270"/>
+    </resources>
 </document>
